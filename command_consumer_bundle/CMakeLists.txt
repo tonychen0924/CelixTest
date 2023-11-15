@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.22)
 
-project(CommandProviderBundle)
+project(CommandConsumerBundle)
 
 set(CMAKE_C_COMPILER gcc)  # 使用 gcc 编译器
 set(CMAKE_CXX_COMPILER g++)  # 使用 g++ 编译器
@@ -23,11 +23,11 @@ include_directories(../implement)
 
 aux_source_directory(./src PROJECT_SRC_DIR)
 
-add_celix_bundle(CommandProviderBundle
+add_celix_bundle(CommandConsumerBundle
         VERSION 1.0.0
         SOURCES ${PROJECT_SRC_DIR}
 )
-target_link_libraries(CommandProviderBundle PRIVATE ServiceExamplesApi)
+target_link_libraries(CommandConsumerBundle PRIVATE ServiceExamplesApi)
 
 # 生成container
 # add_celix_container(MyContainer
@@ -35,5 +35,5 @@ target_link_libraries(CommandProviderBundle PRIVATE ServiceExamplesApi)
 #     BUNDLES
 #         Celix::ShellCxx
 #         Celix::shell_tui
-#         CommandProviderBundle
+#         CommandConsumerBundle
 # )

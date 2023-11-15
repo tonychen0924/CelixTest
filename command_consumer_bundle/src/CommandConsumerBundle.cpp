@@ -12,8 +12,11 @@ public:
     {
         std::cout << "CommandConsumerBundle service bundle start" << std::endl;
 
-        setPCommandConsumer(static_cast<void*>(consumer.get()));
         consumer->commandInstall("test.zip");
+        consumer->commandUninstall("test.zip");
+        consumer->commandStart(3);
+        consumer->commandStop(3);
+        consumer->commandLb();
     }
 
     ~CommandConsumerBundle() noexcept {
@@ -24,8 +27,8 @@ private:
 
     std::shared_ptr<celix::GenericServiceTracker> createTracker(const std::shared_ptr<celix::BundleContext>& ctx)
     {
-        return ctx->trackServices<ACEPHERE_RUNTIME::IPou>()
-                .addSetCallback(std::bind(&CommandConsumer::setPou, consumer, std::placeholders::_1))
+        return ctx->trackServices<ACEPHERE_RUNTIME::ICommand>()
+                .addSetCallback(std::bind(&CommandConsumer::setPCommandConsumer, consumer, std::placeholders::_1))
                 .build();
     }
 
