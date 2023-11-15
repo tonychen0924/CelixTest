@@ -66,12 +66,14 @@ public:
 
     std::string commandLb()
     {
+        std::string res = "";
         std::shared_ptr<ACEPHERE_RUNTIME::ICommand> localCmd = pCommandConsumer;
         if (localCmd) {
-            localCmd->commandLb();
+            res = localCmd->commandLb();
         } else {
             std::cout << "WARNING: commandLb service not available!" << std::endl;
         }
+        return res;
     }
 
 private:
