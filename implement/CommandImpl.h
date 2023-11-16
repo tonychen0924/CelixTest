@@ -42,7 +42,11 @@ public:
     {
         std::string res = "";
         // TODO
-        ctx->listBundleIds();
+        std::vector<long> vec = ctx->listBundleIds();
+        for (size_t i = 0; i < vec.size(); i++)
+        {
+            std::cout << vec[i] << std::endl;
+        }
         std::cout << "lb return terminal content" << std::endl;
         return res;
     }

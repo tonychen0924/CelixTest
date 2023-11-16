@@ -20,6 +20,9 @@ public:
 
         // consumer->commandInstall("/home/tony/git_pro/CelixTest/build/deploy/MyContainer/bundle/TestBundle.zip");
         consumer->commandInstall("/home/tony/git_pro/CelixTest/build/test_bundle/TestBundle.zip");
+
+        // 自身这个bundle无法被统计进去
+        consumer->commandLb();
     }
 
     ~CommandConsumerBundle() noexcept {
