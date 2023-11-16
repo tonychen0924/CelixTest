@@ -8,15 +8,15 @@ public:
     std::shared_ptr<CommandConsumer> consumer;
 
     explicit CommandConsumerBundle(std::shared_ptr<celix::BundleContext> ctx) :
-        consumer{CommandConsumer::create()}, tracker{createTracker(ctx)}
+        consumer{CommandConsumer::create(ctx)}, tracker{createTracker(ctx)}
     {
         std::cout << "CommandConsumerBundle service bundle start" << std::endl;
 
-        consumer->commandInstall("test.zip");
-        consumer->commandUninstall("test.zip");
-        consumer->commandStart(3);
-        consumer->commandStop(3);
-        consumer->commandLb();
+        // consumer->commandInstall("test.zip");
+        // consumer->commandUninstall("test.zip");
+        // consumer->commandStart(3);
+        // consumer->commandStop(3);
+        // consumer->commandLb();
     }
 
     ~CommandConsumerBundle() noexcept {
