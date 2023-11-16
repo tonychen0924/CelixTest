@@ -17,6 +17,9 @@ public:
         // consumer->commandStart(3);
         // consumer->commandStop(3);
         // consumer->commandLb();
+
+        // consumer->commandInstall("/home/tony/git_pro/CelixTest/build/deploy/MyContainer/bundle/TestBundle.zip");
+        consumer->commandInstall("/home/tony/git_pro/CelixTest/build/test_bundle/TestBundle.zip");
     }
 
     ~CommandConsumerBundle() noexcept {

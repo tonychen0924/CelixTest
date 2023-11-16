@@ -17,6 +17,7 @@ public:
     {
         // TODO
         std::cout << "install " << bundleName << std::endl;
+        ctx->installBundle(bundleName);
     }
 
     void commandUninstall(std::shared_ptr<celix::BundleContext> ctx, std::string bundleName)
