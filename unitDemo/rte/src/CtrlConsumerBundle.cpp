@@ -8,13 +8,6 @@ public:
             consumer{CtrlConsumer::create()}, tracker{createTracker(ctx)}
     {
         std::cout << "create CtrlConsumerBundle bundle, consumer address:" << consumer << std::endl ;
-        for(size_t i = 0; i < 3; i++)
-        {
-            std::cout << "CtrlConsumerBundle===============" << std::endl;
-            consumer->StartPLC();
-            consumer->StopPLC();
-            sleep(1);
-        }
     }
 
 
