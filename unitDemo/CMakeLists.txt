@@ -5,6 +5,7 @@ project(test)
 #set(CMAKE_C_STANDARD 17)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g")
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -g")
 
 # 引入celix外部依赖包(否则找不到add_celix_bundle)
 find_package(Celix REQUIRED)
